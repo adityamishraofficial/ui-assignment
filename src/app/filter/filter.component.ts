@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Options } from 'ng5-slider';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Options} from 'ng5-slider';
 
 @Component({
   selector: 'app-filter',
@@ -8,11 +8,12 @@ import { Options } from 'ng5-slider';
 })
 export class FilterComponent implements OnInit {
 
+  @Output('filterPrice') filterPrice = new EventEmitter();
     value = 100;
-    highValue = 100000;
+  highValue = 1000;
   options: Options = {
     floor: 100,
-    ceil: 100000
+    ceil: 1000
   };
 
   constructor() { }
@@ -20,4 +21,11 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
+  onFilterPrice() {
+    const ValueObj = {
+      minPrice: this.value,
+      maxPrice: this.highValue
+    };
+    this.filterPrice.emit(ValueObj);
+  }
 }

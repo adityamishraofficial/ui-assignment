@@ -1,70 +1,80 @@
 <div class="container">
     <div class="cart-list col-md-9">
         <div class="panel panel-default">
+          <ng-container *ngIf="cartList.length > 0; else noItem">
             <div *ngFor="let  cart of cartList" class="panel-body">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img [src]="cart.img_url" style="height: 100px"
-                            class="img-responsive" />
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="product-title">{{cart.name}}</h4>
-                        <div class="price-group">
-                            <h5><span><b>{{cart.price}} </b><del>3999</del></span> <span class="discount">{{cart.discount}}% off</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="quantity">
-                            <i class="fa fa-minus pull-left" aria-hidden="true"></i>
-                            <input type="number" class="form-control pull-left">
-                            <i class="fa fa-plus pull-left" aria-hidden="true"></i>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="button" class="btn remove-btn">Remove</button>
-                    </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <img [src]="cart.img_url" class="img-responsive"
+                       style="height: 100px"/>
                 </div>
+                <div class="col-md-3">
+                  <h4 class="product-title">{{cart.name}}</h4>
+                  <div class="price-group">
+                    <h5><span><b>₹ {{cart.price}} </b><del>3999</del></span> <span class="discount">{{cart.discount}}% off</span>
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="quantity">
+                    <i aria-hidden="true" class="fa fa-minus pull-left"></i>
+                    <input class="form-control pull-left" type="number">
+                    <i aria-hidden="true" class="fa fa-plus pull-left"></i>
+
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn remove-btn" type="button">Remove</button>
+                </div>
+              </div>
             </div>
+          </ng-container>
+          <ng-template #noItem>
+            <div class="alert alert-info">
+              Your Cart is Empty
+            </div>
+          </ng-template>
         </div>
     </div>
     <div class="col-md-3">
+      <ng-container *ngIf="cartList.length > 0">
         <div class="panel panel-default">
-            <div class="panel-body" style="padding: 0px;">
-                <div class="price-title">
-                  <h5 class="text-left">PRICE DETAILS</h5>
-                 </div> 
-                 <div class="price-body row">
-                     <div class="col-md-8">
-                         <div class="price-type">
-                             <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
-                         </div>
-                         <div class="price-type">
-                                <h5>Discount <span class="pull-right">:</span> </h5>
-                            </div>
-                     </div>
-                     <div class="col-md-4">
-                            <div class="price-type">
-                                    <h5>2000</h5>
-                            </div>
-                            <div class="price-type">
-                                    <h5>2000</h5>
-                            </div>
-                     </div>
-                 </div>
-                 <div class="price-footer row">
-                        <div class="col-md-8">
-                                <div class="price-type">
-                                    <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                   <div class="price-type">
-                                           <h5>2000</h5>
-                                   </div>
-                                   </div>
-                 </div>
+          <div class="panel-body" style="padding: 0px;">
+            <div class="price-title">
+              <h5 class="text-left">PRICE DETAILS</h5>
             </div>
+            <div class="price-body row">
+              <div class="col-md-8">
+                <div class="price-type">
+                  <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
+                </div>
+                <div class="price-type">
+                  <h5>Discount <span class="pull-right">:</span> </h5>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="price-type">
+                  <h5> ₹ {{totalPrice}}</h5>
+                </div>
+                <div class="price-type">
+                  <h5>₹ 2000</h5>
+                </div>
+              </div>
+            </div>
+            <div class="price-footer row">
+              <div class="col-md-8">
+                <div class="price-type">
+                  <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="price-type">
+                  <h5>₹ 2000</h5>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </ng-container>
     </div>
 </div>

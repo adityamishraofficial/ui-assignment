@@ -1,1 +1,14 @@
-<p>sort works!</p>
+<div class="col-md-12">
+  <div classs="row">
+    <ul>
+      <li class="title">Short By</li>
+      <li (click)="onSortList('high-low')" [ngClass]="{'activetab' : currentShortType === 'high-low'}">Price -- High
+        Low
+      </li>
+      <li (click)="onSortList('low-high')" [ngClass]="{'activetab' : currentShortType === 'low-high'}">Price -- Low
+        High
+      </li>
+      <li (click)="onSortList('discount')" [ngClass]="{'activetab' : currentShortType === 'discount'}">Discount</li>
+    </ul>
+  </div>
+</div>

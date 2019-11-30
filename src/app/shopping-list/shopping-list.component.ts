@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CurlService } from '../lib/curl.service';
-import { DataService } from '../lib/data.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
-import { CartItem } from '../modal/cartItem';
+import {Component, OnInit} from '@angular/core';
+import {CurlService} from '../lib/curl.service';
+import {DataService} from '../lib/data.service';
+import {NgxUiLoaderService} from 'ngx-ui-loader'; // Import NgxUiLoaderService
+import {CartItem} from '../modal/cartItem';
 
 
 @Component({
@@ -12,6 +12,9 @@ import { CartItem } from '../modal/cartItem';
 })
 export class ShoppingListComponent implements OnInit {
     shoppingList: Array<CartItem[]> = [];
+  filterPrice;
+  sortType = '';
+  searchText = '';
     constructor(
         private curl: CurlService,
         private dataService: DataService,
@@ -19,6 +22,9 @@ export class ShoppingListComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+      this.dataService.searchText.subscribe(res => {
+        this.searchText = res;
+      });
         this.onGetShoppingList();
     }
     onGetShoppingList(): void {
@@ -32,11 +38,17 @@ export class ShoppingListComponent implements OnInit {
         });
     }
     onAddToCart(shoppingData: CartItem): void {
-        // shoppingData['quantity'] = null;
-
-        console.log(shoppingData);
         this.loading.start();
-        this.dataService.addToCart(shoppingData, 1);
+      this.dataService.addToCart(shoppingData);
         this.loading.stop();
     }
+
+  onFilterPrice(priceObj) {
+    this.filterPrice = priceObj;
+    // console.log(priceObj);
+  }
+
+  onSortType(type) {
+    this.sortType = type;
+  }
 }

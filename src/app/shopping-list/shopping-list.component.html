@@ -1,12 +1,18 @@
 <div class="filter col-md-2">
-    <app-filter></app-filter>
+  <app-filter (filterPrice)="onFilterPrice($event)"></app-filter>
 </div>
 <div class="col-md-10 shopping-list">
-        <div *ngFor="let shoppingData of  shoppingList" class="card col-md-2">
+  <div class="filter-component">
+    <app-sort (sortType)="onSortType($event)"></app-sort>
+  </div>
+  <div *ngFor="let shoppingData of  shoppingList | filter:filterPrice | sort: sortType | search: searchText"
+       class="card col-md-2">
                 <img [src]="shoppingData.img_url" class="img-responsive" alt="Avatar" >
                 <div class="container">
-                  <h5><b>{{shoppingData.name}}</b></h5> 
-                  <p><b>{{shoppingData.price}} </b> <del>  900</del></p>   
+                  <h5><b>{{shoppingData.name}}</b></h5>
+                  <p><b> ₹ {{shoppingData.price}} </b>
+                    <del> 900</del>
+                  </p>
                   <div class="percent">
                       <h6>{{shoppingData.discount}}% off</h6>
                   </div>
@@ -15,5 +21,5 @@
               <div class="add-to-cart">
             <button type="button" (click)="onAddToCart(shoppingData)" class="add-to-cart">Add to Cart</button>
             </div>
-        </div>                     
+  </div>
 </div>

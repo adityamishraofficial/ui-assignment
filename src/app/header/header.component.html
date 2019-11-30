@@ -12,16 +12,17 @@
         <div class="form-inline ml-auto">
             <div class="md-form my-0">
                 <ng-container *ngIf="isSearch">
-                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                  <input (input)="onSearchPipe($event)" aria-label="Search" class="form-control" placeholder="Search"
+                         type="text">
                 </ng-container>
               <button (click)="isSearch = true" class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </div>
         </div>
           </li>
-          <li><i (click)="navigateToCart()" class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <li><i (click)="navigateToCart()" aria-hidden="true" class="fa fa-shopping-cart"></i><span
+          class="count-item">{{cartItemCount}}</span>
           </li>
       </ul>
     </div>
   </nav>
-    

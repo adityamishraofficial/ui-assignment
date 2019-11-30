@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
-import { Routes, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {DataService} from '../lib/data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +9,24 @@ import { Routes, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
     isSearch = false;
-  constructor(private route: Router) { }
+
+
+  cartItemCount: number;
+
+  constructor(private route: Router, private dataService: DataService) {
+  }
 
   ngOnInit() {
+    this.dataService.cartList.subscribe(res => {
+      this.cartItemCount = res.length;
+    });
   }
   navigateToCart() {
     this.route.navigateByUrl('/cart');
+  }
+
+  onSearchPipe(event: Event) {
+    let value = (event.target as HTMLInputElement).value;
+    this.dataService.setSearchText(value);
   }
 }
