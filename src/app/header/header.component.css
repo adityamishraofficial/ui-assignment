@@ -1,0 +1,21 @@
+nav{
+    border-radius: 0px;
+    background: #4269ea;
+}
+.fa-star {
+    font-size: 36px;
+    margin-top: 8px;
+    color: #f5cc29;
+}
+.btn-outline-white{
+    background: transparent;
+    font-size: 20px;
+    color: #fff;   
+}
+.fa-shopping-cart{
+    font-size: 25px;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
