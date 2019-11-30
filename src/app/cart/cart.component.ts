@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../lib/data.service';
+import { CartItem } from '../modal/cartItem';
 
 @Component({
   selector: 'app-cart',
@@ -7,15 +8,13 @@ import { DataService } from '../lib/data.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+    cartList: Array<CartItem[]> = [];
   constructor(
       private dataService: DataService
   ) { }
 
   ngOnInit() {
-      this.dataService.cartList.subscribe( res => {
-          console.log(res);
-      });
+      console.log(this.dataService.getCartProduct());
   }
 
 }

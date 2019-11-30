@@ -1,0 +1,48 @@
+.container{
+    margin-top: 100px;
+}
+.price-group {
+    margin-top: 30px;
+}
+.discount {
+    margin-left: 20px;
+    color: green;
+}
+.fa{
+    font-size: 20px;
+    border: 1px solid darkgray;
+    padding: 10px 12px;
+    float: left;
+    border-radius: 50px;
+    margin: 15px;
+}.quantity input {
+    width: 20%;
+    margin-top: 19px;
+}
+.quantity {
+    margin-top: 15px;
+}
+.remove-btn {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.row{
+    margin: 0px !important;
+}
+.product-title {
+    font-weight: 400;
+}
+.price-title h5 {
+    border-bottom: 1px solid darkgray;
+    padding: 15px 15px;
+}
+.price-body {
+    padding: 0px 15px 15px;
+}
+.price-type{
+    margin-bottom: 20px;
+}
+.price-footer{
+    border-top: 1px solid darkgrey;
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurlService } from '../lib/curl.service';
 import { DataService } from '../lib/data.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
+import { CartItem } from '../modal/cartItem';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
     styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-    shoppingList = [];
+    shoppingList: Array<CartItem[]> = [];
     constructor(
         private curl: CurlService,
         private dataService: DataService,
@@ -30,9 +31,12 @@ export class ShoppingListComponent implements OnInit {
             that.shoppingList = result;
         });
     }
-    onAddToCart(shoppingData): void {
+    onAddToCart(shoppingData: CartItem): void {
+        // shoppingData['quantity'] = null;
+
+        console.log(shoppingData);
         this.loading.start();
-        this.dataService.addToCart(shoppingData);
+        this.dataService.addToCart(shoppingData, 1);
         this.loading.stop();
     }
 }
