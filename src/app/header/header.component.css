@@ -15,6 +15,7 @@ nav{
 .fa-shopping-cart{
     font-size: 25px;
     color: #fff;
+    cursor: pointer;
     margin-top: 10px;
     margin-right: 20px;
     margin-left: 10px;
