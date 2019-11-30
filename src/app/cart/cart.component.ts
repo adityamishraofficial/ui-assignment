@@ -10,6 +10,7 @@ import {CartItem} from '../modal/cartItem';
 export class CartComponent implements OnInit {
   cartList: Array<CartItem> = [];
   totalPrice = 0;
+  discountPrice = 0;
   constructor(
     private dataService: DataService
   ) {
@@ -20,12 +21,19 @@ export class CartComponent implements OnInit {
     this.dataService.cartList.subscribe(res => {
       this.cartList = res;
       this.countPrice(res);
+      this.countDiscountPrice(res);
     });
   }
 
   countPrice(productList) {
     for (const item of productList) {
       this.totalPrice += parseInt(item.price);
+    }
+  }
+
+  countDiscountPrice(productList) {
+    for (const item of productList) {
+      this.discountPrice += parseInt(item.price);
     }
   }
 }

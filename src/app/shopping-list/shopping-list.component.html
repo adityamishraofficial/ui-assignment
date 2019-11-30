@@ -11,7 +11,7 @@
                 <div class="container">
                   <h5><b>{{shoppingData.name}}</b></h5>
                   <p><b> ₹ {{shoppingData.price}} </b>
-                    <del> 900</del>
+                    <del> {{shoppingData.price | discount: shoppingData.discount}}</del>
                   </p>
                   <div class="percent">
                       <h6>{{shoppingData.discount}}% off</h6>

@@ -16,6 +16,7 @@ import {NgxUiLoaderConfig, NgxUiLoaderModule} from 'ngx-ui-loader';
 import {FilterPipe} from './pipe/filter.pipe';
 import {SortPipe} from './pipe/sort.pipe';
 import {SearchPipe} from './pipe/search.pipe';
+import {DiscountPipe} from './pipe/discount.pipe';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   // 'bgsColor': '#d12006',
@@ -59,7 +60,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       HeaderComponent,
       FilterPipe,
       SortPipe,
-      SearchPipe
+      SearchPipe,
+      DiscountPipe
     ],
     imports: [
         BrowserModule,

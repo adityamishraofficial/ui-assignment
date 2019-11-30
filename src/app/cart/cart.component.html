@@ -11,14 +11,15 @@
                 <div class="col-md-3">
                   <h4 class="product-title">{{cart.name}}</h4>
                   <div class="price-group">
-                    <h5><span><b>₹ {{cart.price}} </b><del>3999</del></span> <span class="discount">{{cart.discount}}% off</span>
+                    <h5><span><b>₹ {{cart.price}} </b><del>{{cart.price | discount: cart.discount}}</del></span> <span
+                      class="discount">{{cart.discount}}% off</span>
                     </h5>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="quantity">
                     <i aria-hidden="true" class="fa fa-minus pull-left"></i>
-                    <input class="form-control pull-left" type="number">
+                    <input [value]="cart.quantity" class="form-control pull-left" type="number">
                     <i aria-hidden="true" class="fa fa-plus pull-left"></i>
 
                   </div>
@@ -57,7 +58,7 @@
                   <h5> ₹ {{totalPrice}}</h5>
                 </div>
                 <div class="price-type">
-                  <h5>₹ 2000</h5>
+                  <h5>₹ {{totalPrice }}</h5>
                 </div>
               </div>
             </div>

@@ -38,6 +38,7 @@ export class ShoppingListComponent implements OnInit {
         });
     }
     onAddToCart(shoppingData: CartItem): void {
+      shoppingData.quantity = 1;
         this.loading.start();
       this.dataService.addToCart(shoppingData);
         this.loading.stop();
