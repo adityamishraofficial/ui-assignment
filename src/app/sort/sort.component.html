@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12 main-div">
   <div classs="row">
     <ul>
       <li class="title">Short By</li>
@@ -10,5 +10,11 @@
       </li>
       <li (click)="onSortList('discount')" [ngClass]="{'activetab' : currentShortType === 'discount'}">Discount</li>
     </ul>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="padding: 0px;">
+    <i aria-hidden="true" class="fa fa-filter"></i> Sort
   </div>
 </div>

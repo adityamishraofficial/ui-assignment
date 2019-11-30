@@ -22,3 +22,21 @@ ul .title {
   color: #4269ea;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 800px) {
+  .main-div {
+    display: none;
+  }
+
+  .panel-default {
+    margin-top: 68px;
+    display: block;
+    margin-bottom: 0px;
+    text-align: center;
+    top: 136px;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+

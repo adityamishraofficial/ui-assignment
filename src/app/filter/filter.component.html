@@ -1,10 +1,16 @@
 <div class="sidenav">
-    <h3>Filters</h3>
-    <div class="filter-content">
-    <ng5-slider [(value)]="value"   [(highValue)]="highValue" [options]="options"></ng5-slider>
+  <h3>Filters</h3>
+  <div class="filter-content">
+    <ng5-slider [(highValue)]="highValue" [(value)]="value" [options]="options"></ng5-slider>
     <h5 class="text-center" style="margin: 0px;">Price</h5>
     <div class="text-center">
       <button (click)="onFilterPrice()" class="btn  btn-primary" type="button">Apply</button>
     </div>
+  </div>
 </div>
-      </div>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="padding: 0px;">
+    <i aria-hidden="true" class="fa fa-filter"></i> Filter
+  </div>
+</div>

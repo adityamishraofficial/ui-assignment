@@ -25,7 +25,7 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <button class="btn remove-btn" type="button">Remove</button>
+                  <button (click)="onRemoveItem(cart.id)" class="btn remove-btn" type="button">Remove</button>
                 </div>
               </div>
             </div>
@@ -47,30 +47,30 @@
             <div class="price-body row">
               <div class="col-md-8">
                 <div class="price-type">
-                  <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
+                  <h5>Price ( {{totalItem}} Item ) <span class="pull-right">:</span></h5>
                 </div>
                 <div class="price-type">
                   <h5>Discount <span class="pull-right">:</span> </h5>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4" style="padding: 0px;">
                 <div class="price-type">
-                  <h5> ₹ {{totalPrice}}</h5>
+                  <h5> ₹ {{allItemPrice}}</h5>
                 </div>
                 <div class="price-type">
-                  <h5>₹ {{totalPrice }}</h5>
+                  <h5>₹ {{discountPrice }}</h5>
                 </div>
               </div>
             </div>
             <div class="price-footer row">
               <div class="col-md-8">
                 <div class="price-type">
-                  <h5>Price ( 1 Item ) <span class="pull-right">:</span></h5>
+                  <h5>Price ( {{totalItem}} Item ) <span class="pull-right">:</span></h5>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="price-type">
-                  <h5>₹ 2000</h5>
+                  <h5>₹ {{totalPrice}}</h5>
                 </div>
               </div>
             </div>

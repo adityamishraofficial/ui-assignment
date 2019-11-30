@@ -3,7 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 import {CartItem} from '../modal/cartItem';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 
@@ -16,7 +16,7 @@ export class DataService {
   //
   // constructor() {
   //     // this.productsRef.next(this.products);
-    //  }
+  //  }
   //
   // //  getCartProduct(){
   // //    return this.products.asObservable;
@@ -59,6 +59,14 @@ export class DataService {
   public cartList = this.cartObj.asObservable();
 
   constructor() {
+  }
+
+  removeToCart(i) {
+    let newCartObj;
+    this.cartList.subscribe(res => {
+      newCartObj = res.filter((item) => item.id !== i);
+      this.cartObj.next(newCartObj);
+    });
   }
 
   addToCart(obj) {

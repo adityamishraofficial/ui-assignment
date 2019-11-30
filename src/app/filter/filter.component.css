@@ -10,7 +10,7 @@
     padding-top: 80px;
     overflow-x: hidden;
   }
-  
+
   .sidenav h3 {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
@@ -18,12 +18,12 @@
     color: #555;
     display: block;
   }
-  
-  .sidenav a:hover {
+
+.sidenav a:hover {
     color: #f1f1f1;
   }
-  
-  .filter-content{
+
+.filter-content{
       margin-top: 30px;
     padding: 6px 15px 6px 32px;
     display: block;
@@ -34,3 +34,25 @@
     padding: 7px 40px;
     border-radius: 18px;
   }
+
+.panel-default {
+  margin-top: 100px;
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidenav {
+    display: none;
+  }
+
+  .panel-default {
+    margin-top: 68px;
+    display: block;
+    margin-bottom: 0px;
+    text-align: center;
+    top: 136px;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
