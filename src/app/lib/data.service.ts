@@ -8,48 +8,6 @@ import {CartItem} from '../modal/cartItem';
 
 
 export class DataService {
-  //
-  //
-  // productsRef = new BehaviorSubject<any>([]);
-  //
-  // cartProducts = this.productsRef.asObservable();
-  //
-  // constructor() {
-  //     // this.productsRef.next(this.products);
-  //  }
-  //
-  // //  getCartProduct(){
-  // //    return this.products.asObservable;
-  // //  }
-  //
-  //  addToCart(product,quantity){
-  //      const  products = [];
-  //   this.cartProducts.subscribe( res => {
-  //             if(res.filter(e => e.item.id === product.id).length > 0) {
-  //      res.forEach((e)=>{
-  //         if(e.item.id == product.id ) {
-  //             e.quantity = quantity;
-  //         }
-  //      })
-  //   } else {
-  //     products.push({
-  //         item : product,
-  //         quantity : quantity
-  //     });
-  //   }
-  // })
-  //
-  //   this.productsRef.next(products);
-  // this.productsRef.subscribe(res => {
-  //     console.log(res);
-  // })
-  //
-  //  }
-  //
-  // removeFromCart(product){
-  // //   this.products =  this.products.filter(e => e.item.id != product.item.id);
-  // //   this.productsRef.next(this.products);
-  // }
 
 
   products: any = [];
