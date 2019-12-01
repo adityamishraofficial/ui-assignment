@@ -40,12 +40,17 @@
   display: none;
 }
 
+.btn-info {
+  display: none;
+}
+
 @media only screen and (max-width: 800px) {
   .sidenav {
     display: none;
   }
 
   .panel-default {
+    cursor: pointer;
     margin-top: 68px;
     display: block;
     margin-bottom: 0px;

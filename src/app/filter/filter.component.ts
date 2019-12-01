@@ -16,6 +16,9 @@ export class FilterComponent implements OnInit {
     ceil: 1000
   };
 
+  abc() {
+    console.log('5trdfvds');
+  }
   constructor() { }
 
   ngOnInit() {
