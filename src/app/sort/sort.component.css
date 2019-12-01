@@ -4,7 +4,7 @@ ul {
   margin-bottom: 40px;
 }
 
-ul li {
+.pc-ul-list li {
   display: inline-block;
   margin-right: 25px;
   font-size: 14px;
@@ -27,11 +27,51 @@ ul .title {
   display: none;
 }
 
+.btn-info {
+  /*display: none;*/
+  visibility: hidden;
+}
+
+.modal-dialog {
+  margin-top: 125px;
+}
+
+
 @media only screen and (max-width: 800px) {
   .main-div {
     display: none;
   }
 
+  .modal-footer {
+    padding: 0px;
+  }
+
+  .modal-footer button {
+    margin: 0px;
+    background: #fff;
+    color: #293e81;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .apply-btn {
+    border-left: 1px solid darkgray;
+  }
+
+  .mobile-list {
+    font-weight: 500;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .mobile-list li {
+    margin-bottom: 10px;
+  }
+
+  .modal-body h4 {
+    margin-bottom: 25px;
+  }
   .panel-default {
     cursor: pointer;
     margin-top: 68px;

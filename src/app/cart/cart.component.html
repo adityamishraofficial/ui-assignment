@@ -4,11 +4,11 @@
           <ng-container *ngIf="cartList.length > 0; else noItem">
             <div *ngFor="let  cart of cartList" class="panel-body">
               <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-xs-5">
                   <img [src]="cart.img_url" class="img-responsive"
                        style="height: 100px"/>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-7">
                   <h4 class="product-title">{{cart.name}}</h4>
                   <div class="price-group">
                     <h5><span><b>₹ {{cart.price}} </b><del>{{cart.price | discount: cart.discount}}</del></span> <span
@@ -45,7 +45,7 @@
               <h5 class="text-left">PRICE DETAILS</h5>
             </div>
             <div class="price-body row">
-              <div class="col-md-8">
+              <div class="col-md-8 col-xs-8">
                 <div class="price-type">
                   <h5>Price ( {{totalItem}} Item ) <span class="pull-right">:</span></h5>
                 </div>
@@ -53,7 +53,7 @@
                   <h5>Discount <span class="pull-right">:</span> </h5>
                 </div>
               </div>
-              <div class="col-md-4" style="padding: 0px;">
+              <div class="col-md-4 col-xs-4" style="padding: 0px;">
                 <div class="price-type">
                   <h5> ₹ {{allItemPrice}}</h5>
                 </div>
@@ -63,12 +63,12 @@
               </div>
             </div>
             <div class="price-footer row">
-              <div class="col-md-8">
+              <div class="col-md-8 col-xs-8">
                 <div class="price-type">
-                  <h5>Price ( {{totalItem}} Item ) <span class="pull-right">:</span></h5>
+                  <h5>Total Payable</h5>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 col-xs-4">
                 <div class="price-type">
                   <h5>₹ {{totalPrice}}</h5>
                 </div>

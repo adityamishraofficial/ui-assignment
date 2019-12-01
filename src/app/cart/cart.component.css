@@ -50,9 +50,51 @@
 /*.panel-default{*/
 /*  display: none;*/
 /*}*/
-/*@media only screen and (max-width: 800px) {*/
+@media only screen and (max-width: 800px) {
+  .panel-body {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid darkgray;
+  }
 
-/*  .panel-default {*/
-/*    display: block;*/
-/*  }*/
-/*}*/
+  .discount {
+    margin-left: 10px;
+  }
+
+  .text-left {
+    color: #777;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .price-type h5 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .remove-btn {
+    background: transparent;
+    margin-top: 0px;
+    float: right;
+    margin-right: 80px;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .quantity input {
+    width: 14%;
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .fa {
+    font-size: 12px;
+    margin: 0px;
+    padding: 7px 8px;
+  }
+
+  .img-responsive {
+    height: 130px !important;
+  }
+}

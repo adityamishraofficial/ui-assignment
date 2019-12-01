@@ -41,12 +41,40 @@
 }
 
 .btn-info {
-  display: none;
+  /*display: none;*/
+  visibility: hidden;
+}
+
+.modal-dialog {
+  margin-top: 125px;
 }
 
 @media only screen and (max-width: 800px) {
   .sidenav {
     display: none;
+  }
+
+  .modal-footer {
+    padding: 0px;
+  }
+
+  .modal-footer button {
+    margin: 0px;
+    background: #fff;
+    color: #293e81;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .apply-btn {
+    border-left: 1px solid darkgray;
+  }
+
+  .filter-content h6 {
+    text-align: center;
+    margin-top: -5px;
+    font-size: 15px;
+    color: #777;
   }
 
   .panel-default {

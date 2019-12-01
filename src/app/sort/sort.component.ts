@@ -8,6 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class SortComponent implements OnInit {
   @Output('sortType') sortType = new EventEmitter();
   currentShortType = '';
+  sortValue;
   constructor() { }
 
   ngOnInit() {

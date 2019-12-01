@@ -1,7 +1,7 @@
 <div class="col-md-12 main-div">
   <div classs="row">
-    <ul>
-      <li class="title">Short By</li>
+    <ul class="pc-ul-list">
+      <li class="title">Sort By</li>
       <li (click)="onSortList('high-low')" [ngClass]="{'activetab' : currentShortType === 'high-low'}">Price -- High
         Low
       </li>
@@ -14,7 +14,44 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-body" style="padding: 0px;">
+  <div class="panel-body" data-target="#myModalsort" data-toggle="modal" style="padding: 0px;">
     <i aria-hidden="true" class="fa fa-filter"></i> Sort
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalsort" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <h4>Sort Options</h4>
+        <div class="filter-content">
+          <ul class="mobile-list">
+            <li [ngClass]="{'activetab' : currentShortType === 'high-low'}">
+              <input [(ngModel)]="sortValue" name="price" type="radio" value="high-low"> Price -- High Low
+            </li>
+            <li [ngClass]="{'activetab' : currentShortType === 'low-high'}">
+              <input [(ngModel)]="sortValue" name="price" type="radio" value="low-high"> Price -- Low High
+            </li>
+            <li [ngClass]="{'activetab' : currentShortType === 'discount'}">
+              <input [(ngModel)]="sortValue" name="price" type="radio" value="discount"> Discount
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--        <div class="row">-->
+        <button class="col-xs-6 btn" data-dismiss="modal" type="button">Cancel</button>
+        <button (click)="onSortList(sortValue)" class="btn col-xs-6 apply-btn" data-dismiss="modal" type="button">
+          Apply
+        </button>
+        <!--        </div>-->
+      </div>
+    </div>
+
   </div>
 </div>

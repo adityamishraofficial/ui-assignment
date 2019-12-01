@@ -15,7 +15,9 @@
                   <input (input)="onSearchPipe($event)" aria-label="Search" class="form-control" placeholder="Search"
                          type="text">
                 </ng-container>
-              <button (click)="isSearch = true" class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+              <button (click)="isSearch = true" [ngClass]="{'hover-btn' : isSearch}"
+                      class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit"><i aria-hidden="true"
+                                                                                         class="fa fa-search"></i>
               </button>
             </div>
         </div>

@@ -37,6 +37,29 @@ nav{
     float: left;
   }
 
+  .md-form input {
+    float: left;
+    border: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+  }
+
+  .md-form input:focus {
+    box-shadow: none;
+  }
+
+  .md-form button {
+    margin-top: -6px;
+  }
+
+  .md-form .hover-btn {
+    margin-top: 0px;
+    position: absolute;
+    right: -5px;
+    top: -4px;
+  }
   .fa-star {
     font-size: 30px;
     margin-left: 10px;

@@ -9,7 +9,7 @@ import {DataService} from '../lib/data.service';
 })
 export class HeaderComponent implements OnInit {
     isSearch = false;
-
+  searchText;
 
   cartItemCount: number;
 
@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
   onSearchPipe(event: Event) {
     let value = (event.target as HTMLInputElement).value;
+    this.searchText = value;
     this.dataService.setSearchText(value);
   }
 }

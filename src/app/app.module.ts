@@ -17,6 +17,7 @@ import {FilterPipe} from './pipe/filter.pipe';
 import {SortPipe} from './pipe/sort.pipe';
 import {SearchPipe} from './pipe/search.pipe';
 import {DiscountPipe} from './pipe/discount.pipe';
+import {FormsModule} from '@angular/forms';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   // 'bgsColor': '#d12006',
@@ -63,14 +64,15 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       SearchPipe,
       DiscountPipe
     ],
-    imports: [
-        BrowserModule,
-        Ng5SliderModule,
-        HttpClientModule,
-        NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-        AppRoutingModule,
-        BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    Ng5SliderModule,
+    HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule
+  ],
     providers: [],
     bootstrap: [AppComponent]
 })

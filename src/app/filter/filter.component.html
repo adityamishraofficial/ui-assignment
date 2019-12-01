@@ -10,14 +10,13 @@
 </div>
 
 <div class="panel panel-default">
-  <div (click)="openPop.click()" class="panel-body" style="padding: 0px;">
+  <div class="panel-body" data-target="#myModal" data-toggle="modal" style="padding: 0px;" type="button">
     <i aria-hidden="true" class="fa fa-filter"></i> Filter
   </div>
 </div>
 
-<button #openPop (click)="abc()" class="btn btn-info btn-lg" data-target="#myModal" data-toggle="modal" type="button">
-  Open Modal
-</button>
+<!--<button #openPop (click)="abc()" class="btn btn-info" >-->
+<!--</button>-->
 
 
 <!-- Modal -->
@@ -26,15 +25,20 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <button class="close" data-dismiss="modal" type="button">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
+
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <h4>Filter Options</h4>
+        <div class="filter-content">
+          <ng5-slider [(highValue)]="highValue" [(value)]="value" [options]="options"></ng5-slider>
+          <h6>Price</h6>
+        </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+        <!--        <div class="row">-->
+        <button class="col-xs-6 btn" data-dismiss="modal" type="button">Cancel</button>
+        <button (click)="onFilterPrice()" class="btn col-xs-6 apply-btn" data-dismiss="modal" type="button">Apply
+        </button>
+        <!--        </div>-->
       </div>
     </div>
 
